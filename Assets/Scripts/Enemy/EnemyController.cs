@@ -39,8 +39,11 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy enemy = collision.transform.GetComponent<Enemy>();
-        if (enemy)
+        LayerMask layer = collision.gameObject.layer;
+        if (enemy || layer == groundLayer)
+        {
             direction *= -1;
+        }
     }
 
     public bool IsGrounded()
