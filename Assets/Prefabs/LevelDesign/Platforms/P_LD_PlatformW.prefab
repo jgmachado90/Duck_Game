@@ -70,6 +70,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_MDL_PlatformW
       objectReference: {fileID: 0}
+    - target: {fileID: 3047706221923850452, guid: df0b955a5a34b7c47ba8f7b0ba942841, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3047706221923850453, guid: df0b955a5a34b7c47ba8f7b0ba942841, type: 3}
       propertyPath: m_RootOrder
       value: 1
