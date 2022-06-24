@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bounce
   - AirColumn
+  - ShockWave
   layers:
   - Default
   - TransparentFX

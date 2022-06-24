@@ -1,0 +1,19 @@
+{
+    "name": "CollisionSystem",
+    "rootNamespace": "",
+    "references": [
+        "UtilsEditor",
+        "Common",
+        "Utils",
+        "GameFramework"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

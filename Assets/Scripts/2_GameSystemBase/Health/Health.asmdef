@@ -1,0 +1,21 @@
+{
+    "name": "Health",
+    "rootNamespace": "",
+    "references": [
+        "GameFramework",
+        "UtilsEditor",
+        "Common",
+        "CollisionSystem",
+        "Utils",
+        "Interfaces"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
