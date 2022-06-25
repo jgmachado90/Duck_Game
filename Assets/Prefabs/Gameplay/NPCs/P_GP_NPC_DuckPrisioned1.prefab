@@ -1,5 +1,122 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1678065251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678065252}
+  - component: {fileID: 1678065256}
+  - component: {fileID: 1678065255}
+  - component: {fileID: 1678065254}
+  - component: {fileID: 1678065253}
+  m_Layer: 0
+  m_Name: LibertyTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1678065252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4106704313442216117}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1678065256
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.060635567, y: 0.15158844}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4446602, y: 1.3031766}
+  m_EdgeRadius: 0
+--- !u!114 &1678065255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac551a001c261874f9d9fa39ecf1c4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generateTriggerComponents: 1
+  generateOnlyTriggerColliders: 1
+  collisionPreset: {fileID: 0}
+  triggersEnter: []
+  triggersExit: []
+  feedbackEnter:
+    spawn: []
+    actions: []
+  feedbackExit:
+    spawn: []
+    actions: []
+--- !u!114 &1678065254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f438b0f8b23e8a42af0740f2ce536f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerArea: {fileID: 1678065255}
+  notificationComponent: {fileID: 1678065253}
+--- !u!114 &1678065253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7987a275c2af58a4e8faaa09da126bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endConversation:
+    spawn: []
+    actions: []
+  dialogue:
+    name: 
+    sentences:
+    - Ajudar esse patinho?
+  onlyOnce: 1
 --- !u!1001 &568930128758867814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,9 +124,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4106704313442216117}
     m_Modifications:
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.70551234
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.70551234
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7055123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9899357
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.14151807
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621077764792, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 16.271
+      objectReference: {fileID: 0}
     - target: {fileID: 6647397621640839579, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
       propertyPath: m_Name
       value: P_MDL_DuckNPC1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647397621640839580, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6647397621640839581, guid: 85da6b56734045d47b8a45d6fd1a31ee, type: 3}
       propertyPath: m_RootOrder
@@ -66,7 +219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1352799434009430667, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_Name
-      value: P_GP_NPC_DuckPrisioned1
+      value: P_GP_NPC1_DuckPrisioned
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_RootOrder
@@ -74,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.96
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90,15 +243,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -112,6 +265,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6172681124591417252, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: m_Size.x
+      value: 3.3550682
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172681124591417252, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.017645836
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: onlyOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: lockPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: activateOnEnd
+      value: 
+      objectReference: {fileID: 1678065252}
     - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: "Voc\xEA \xE9 aquele puto que comia nossas ma\xE7\xE3s!"
