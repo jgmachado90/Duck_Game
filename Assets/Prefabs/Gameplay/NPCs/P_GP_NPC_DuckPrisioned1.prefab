@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1678065255}
   - component: {fileID: 1678065254}
   - component: {fileID: 1678065253}
+  - component: {fileID: 8013746901549234152}
   m_Layer: 0
   m_Name: LibertyTrigger
   m_TagString: Untagged
@@ -105,12 +106,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7987a275c2af58a4e8faaa09da126bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endConversation: {fileID: 0}
+  endConversation: {fileID: 8013746901549234152}
   dialogue:
     name: 
     sentences:
     - Ajudar esse patinho?
   onlyOnce: 1
+--- !u!114 &8013746901549234152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678065251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks:
+  - {fileID: 0}
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlayWhileAlreadyPlaying: 1
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
 --- !u!114 &795909974668929094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +202,50 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
+--- !u!1 &4549504770761889443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590049170082449491}
+  - component: {fileID: 1268950888670667906}
+  m_Layer: 0
+  m_Name: PlayTimelineOnEnable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1590049170082449491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549504770761889443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2943130616820012979}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268950888670667906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549504770761889443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e63e3be7b5fe264cbf781fad4ba5e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineIndex: 0
 --- !u!1001 &568930128758867814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -334,6 +424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+--- !u!4 &2943130616820012979 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+  m_PrefabInstance: {fileID: 7660885416651826851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4106704313442216117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5957452388331228694, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
