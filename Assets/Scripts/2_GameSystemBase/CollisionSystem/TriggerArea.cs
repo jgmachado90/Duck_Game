@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameFramework;
 using UnityEngine;
 using UtilsEditor;
+using MoreMountains.Feedbacks;
 
 namespace CollisionSystem {
 
@@ -16,10 +17,10 @@ namespace CollisionSystem {
         [Header("Triggers")]
         public List<CollisionEventBase> triggersEnter;
         public List<CollisionEventBase> triggersExit;
-        
+
         [Header("Feedback")]
-        public Feedback feedbackEnter;
-        public Feedback feedbackExit;
+        public MMFeedbacks feedbackEnter;
+        public MMFeedbacks feedbackExit;
         
         public event Action<GameObject> OnEnterArea;
         public event Action<GameObject> OnExitArea;
@@ -90,15 +91,17 @@ namespace CollisionSystem {
 
         [Button(ButtonMode.EnabledInPlayMode)]
         private void Enter() {
-            feedbackEnter.Invoke(transform,this);
             OnEnterArea?.Invoke(LastTriggeredObject);
+            if (gameObject.activeSelf)
+                feedbackEnter.PlayFeedbacks();
         }
         
         [Button(ButtonMode.EnabledInPlayMode)]
         private void Exit() {
-            feedbackExit.Invoke(transform,this);
             OnExitArea?.Invoke(LastTriggeredObject);
             LastTriggeredObject = null;
+            if(gameObject.activeSelf)
+                feedbackExit.PlayFeedbacks();
         }
     }
 }

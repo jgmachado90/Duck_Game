@@ -77,12 +77,8 @@ MonoBehaviour:
   collisionPreset: {fileID: 0}
   triggersEnter: []
   triggersExit: []
-  feedbackEnter:
-    spawn: []
-    actions: []
-  feedbackExit:
-    spawn: []
-    actions: []
+  feedbackEnter: {fileID: 0}
+  feedbackExit: {fileID: 0}
 --- !u!114 &1678065254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,14 +105,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7987a275c2af58a4e8faaa09da126bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endConversation:
-    spawn: []
-    actions: []
+  endConversation: {fileID: 0}
   dialogue:
     name: 
     sentences:
     - Ajudar esse patinho?
   onlyOnce: 1
+--- !u!114 &795909974668929094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990262357489510068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks:
+  - {fileID: 0}
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlayWhileAlreadyPlaying: 1
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
 --- !u!1001 &568930128758867814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,7 +258,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1352799434009430667, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_Name
-      value: P_GP_NPC1_DuckPrisioned
+      value: P_GP_NPC_DuckPrisioned1
       objectReference: {fileID: 0}
     - target: {fileID: 4794353388540309776, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: m_RootOrder
@@ -286,6 +325,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1678065252}
     - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: endConversation
+      value: 
+      objectReference: {fileID: 795909974668929094}
+    - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
       value: "Voc\xEA \xE9 aquele puto que comia nossas ma\xE7\xE3s!"
       objectReference: {fileID: 0}
@@ -294,5 +337,10 @@ PrefabInstance:
 --- !u!4 &4106704313442216117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5957452388331228694, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+  m_PrefabInstance: {fileID: 7660885416651826851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &990262357489510068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7489188129184333847, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
   m_PrefabInstance: {fileID: 7660885416651826851}
   m_PrefabAsset: {fileID: 0}

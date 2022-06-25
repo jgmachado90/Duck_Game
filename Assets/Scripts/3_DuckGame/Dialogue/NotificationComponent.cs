@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameFramework;
+using MoreMountains.Feedbacks;
 
 namespace DialogueSystem {
     public class NotificationComponent : Entity
     {
         private NotificationManager notificationManager;
-        public Feedback endConversation;
+        public MMFeedbacks endConversation;
 
         public Dialogue dialogue;
 
@@ -34,7 +35,7 @@ namespace DialogueSystem {
         public void EndNotification()
         {
             notificationManager.currentNotification = null;
-            endConversation?.Invoke(this);
+            endConversation.PlayFeedbacks();
             if (onlyOnce)
                 gameObject.SetActive(false);
         }

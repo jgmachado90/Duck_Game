@@ -5,7 +5,8 @@
         "UtilsEditor",
         "Common",
         "Utils",
-        "GameFramework"
+        "GameFramework",
+        "MoreMountains.Feedbacks"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

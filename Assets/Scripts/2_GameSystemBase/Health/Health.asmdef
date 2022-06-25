@@ -7,7 +7,8 @@
         "Common",
         "CollisionSystem",
         "Utils",
-        "Interfaces"
+        "Interfaces",
+        "MoreMountains.Feedbacks"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

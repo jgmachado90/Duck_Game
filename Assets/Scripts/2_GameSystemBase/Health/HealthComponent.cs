@@ -5,6 +5,8 @@ using GameFramework;
 using UnityEditor;
 using UnityEngine;
 using UtilsEditor;
+using MoreMountains.Feedbacks;
+
 #if UNITY_EDITOR
 
 #endif
@@ -18,8 +20,8 @@ namespace Health
         public bool getChildTakeDamage;
 
         [Header("Feedbacks")]
-        public Feedback feedbackDamage;
-        public Feedback feedbackDeath;
+        public MMFeedbacks feedbackDamage;
+        public MMFeedbacks feedbackDeath;
 
         public Health HealthStatus => health;
         public bool IsAlive => health.IsAlive;
@@ -49,7 +51,7 @@ namespace Health
         }
 
         private void OnTakeDamage(float obj){
-            feedbackDamage.Invoke(transform,this);
+            feedbackDamage.PlayFeedbacks();
         }
 
         [Button(ButtonMode.EnabledInPlayMode)]
@@ -68,7 +70,7 @@ namespace Health
         }
 
         private void PostDeath(){
-            feedbackDeath.Invoke(transform,this);
+            feedbackDeath.PlayFeedbacks();
             OnDeath?.Invoke();
         }
 

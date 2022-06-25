@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameFramework;
 using CollisionSystem;
+using MoreMountains.Feedbacks;
+
 
 namespace DialogueSystem
 {
@@ -19,8 +21,7 @@ namespace DialogueSystem
 
         public TriggerArea triggerArea;
 
-        public Feedback endConversation;
-        public Transform activateOnEnd;
+        public MMFeedbacks endConversation;
 
         public DialogueManager CurrentManager { get; set; }
 
@@ -65,13 +66,12 @@ namespace DialogueSystem
 
         public void EndConversation()
         {
+            dialogueManager.currentDialogue = null;
+            endConversation.PlayFeedbacks();
             if (lockPlayer)
                 inputController.SetInputActive(true);
             if (onlyOnce)
                 gameObject.SetActive(false);
-            dialogueManager.currentDialogue = null;
-            activateOnEnd.gameObject.SetActive(true);
-            endConversation?.Invoke(this);
         }
 
     }

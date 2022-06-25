@@ -4,6 +4,7 @@ using GameFramework;
 using UnityEditor;
 using UnityEngine;
 using UtilsEditor;
+using MoreMountains.Feedbacks;
 #if UNITY_EDITOR
 
 #endif
@@ -15,7 +16,7 @@ namespace Health
         public float damage=1;
         public bool destroyOnDamage;
         public GameplayFlags flags;
-        public Feedback feedbackOnDamaged;  
+        public MMFeedbacks feedbackOnDamaged;  
 
         private bool damaged;
 
@@ -35,7 +36,7 @@ namespace Health
             if (destroyOnDamage) damaged = true;
             
             OnDamagedEvent?.Invoke();
-            feedbackOnDamaged.Invoke(transform,this);
+            feedbackOnDamaged.PlayFeedbacks();
             
             if (destroyOnDamage){
                 Destroy(gameObject);
