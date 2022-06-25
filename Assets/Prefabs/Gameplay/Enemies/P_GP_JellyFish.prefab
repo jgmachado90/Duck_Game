@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1790470740534254914}
   - component: {fileID: 6123830813994409040}
+  - component: {fileID: 18853390}
   m_Layer: 0
   m_Name: BouncableCollider
   m_TagString: Bounce
@@ -44,9 +45,33 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009819667, y: -0.0022350948}
+  m_Offset: {x: -0.009819667, y: 0.065567575}
   serializedVersion: 2
-  m_Radius: 0.29346848
+  m_Radius: 0.1578629
+--- !u!114 &18853390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356468082833728129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4326ae436203f44aade62fe875e469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: {fileID: 0}
+  collisionSettings:
+    gameObjectLayer: 
+    collisionTags: []
+    gameplayFlags:
+      flags: []
+    damageMultiplierFlags:
+      flags: []
+  actions: []
+  destroy: 0
+  destroyGameObject: 0
+  triggerSameCollider: 1
 --- !u!1 &5063369531009450565
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +193,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7051402445890934399}
+  - component: {fileID: 18853389}
+  - component: {fileID: 1829556673748075198}
+  - component: {fileID: 5559213625666493721}
+  - component: {fileID: 18853394}
+  - component: {fileID: 18853395}
   m_Layer: 0
   m_Name: P_GP_JellyFish
   m_TagString: Untagged
@@ -184,12 +214,201 @@ Transform:
   m_GameObject: {fileID: 6194875378201263663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8431943435188442008}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18853389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194875378201263663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d098cb75b9529a47b1006759cfe15ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageWhenBounce: 1
+  bounceForce: 5
+  health: {fileID: 1829556673748075198}
+  triggerEnter2D: {fileID: 18853390}
+--- !u!114 &1829556673748075198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194875378201263663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc3fd9b6175e434baeda3d7548d4eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health:
+    currentHealth: 1
+    maxHealth: 1
+    lockTakeDamage: 0
+    destroyOnDeath: {fileID: 0}
+    entityState: {fileID: 0}
+    healthKey: 
+    maxHealthKey: 
+  damageSettings:
+    invulnerabilityTime:
+      coolDownTime: 0
+    damageLayerMask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    takeDamageFlags:
+      flags: []
+    damageMultiplierFlags:
+      flags: []
+    takeDamageFeedback: []
+    collisionEventComponent: []
+    damageMultiplier: 1
+  takeDamageComponents: []
+  getChildTakeDamage: 0
+  feedbackDamage: {fileID: 0}
+  feedbackDeath: {fileID: 5559213625666493721}
+--- !u!114 &5559213625666493721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194875378201263663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks:
+  - {fileID: 18853395}
+  - {fileID: 18853394}
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlayWhileAlreadyPlaying: 1
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
+--- !u!114 &18853394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194875378201263663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe4b9b079619143a9748eeee75e698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Particles Instantiation
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  Mode: 0
+  CachedRecycle: 1
+  ParticlesPrefab: {fileID: 1036131166691651670, guid: 65d8a071dc77c024db1a414876e2991e, type: 3}
+  RandomParticlePrefabs: []
+  PositionMode: 1
+  InstantiateParticlesPosition: {fileID: 8431943435188442008}
+  TargetWorldPosition: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: 0, z: 0}
+  NestParticles: 0
+  ApplyRotation: 0
+  ApplyScale: 0
+--- !u!114 &18853395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194875378201263663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129222f02399ae42b78955d953ada11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Set Active
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  TargetGameObject: {fileID: 5063369531009450565}
+  SetStateOnInit: 0
+  StateOnInit: 1
+  SetStateOnPlay: 1
+  StateOnPlay: 1
+  SetStateOnStop: 0
+  StateOnStop: 1
+  SetStateOnReset: 0
+  StateOnReset: 1
 --- !u!1 &7578417401988842353
 GameObject:
   m_ObjectHideFlags: 0

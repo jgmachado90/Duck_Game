@@ -112,14 +112,14 @@ public class PlayerMovement : Entity
 
     private void CheckCollisions()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position * groundRaycastLength, Vector2.down, groundRaycastLength, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up *groundRaycastLength, groundRaycastLength, groundLayer);
         onGround = hit;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundRaycastLength);
+        Gizmos.DrawLine(transform.position, transform.position - transform.up * groundRaycastLength);
     }
 
 }

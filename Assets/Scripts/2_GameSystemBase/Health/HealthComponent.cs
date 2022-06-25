@@ -51,6 +51,7 @@ namespace Health
         }
 
         private void OnTakeDamage(float obj){
+            if (feedbackDamage == null) return;
             feedbackDamage.PlayFeedbacks();
         }
 

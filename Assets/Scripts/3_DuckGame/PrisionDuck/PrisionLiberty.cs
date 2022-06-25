@@ -11,7 +11,7 @@ public class PrisionLiberty : Entity
 
     private void OnEnable()
     {
-        if (triggerArea)
+        if (triggerArea != null)
         {
             triggerArea.OnEnterArea += OnEnterLibertyArea;
             triggerArea.OnExitArea += OnExitLibertyArea;
@@ -20,7 +20,7 @@ public class PrisionLiberty : Entity
 
     private void OnDisable()
     {
-        if (triggerArea)
+        if (triggerArea != null)
         {
             triggerArea.OnEnterArea -= OnEnterLibertyArea;
             triggerArea.OnExitArea -= OnExitLibertyArea;
