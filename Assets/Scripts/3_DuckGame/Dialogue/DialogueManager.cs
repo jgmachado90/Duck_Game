@@ -33,14 +33,6 @@ namespace DialogueSystem
 
         private void Update()
         {
-            /*if (inputController.GetDialogueInput()) { 
-                if (currentDialogue != null && talking == false)
-                    StartDialogue();
-                else if (talking == true)
-                {
-                    DisplayNextSentence();
-                }
-            }*/
             if(currentDialogue != null && !talking)
             {
                 StartDialogue();
@@ -49,7 +41,6 @@ namespace DialogueSystem
             {
                 DisplayNextSentence();
             }
-
         }
 
         public void StartDialogue()

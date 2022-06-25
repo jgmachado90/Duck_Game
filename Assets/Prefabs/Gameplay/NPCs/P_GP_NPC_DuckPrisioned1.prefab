@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489188129184333840, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "Voc\xEA \xE9 aquele puto que comia nossas ma\xE7\xE3s!"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1654eb57ee754464b8d7cb676ef846bd, type: 3}
 --- !u!4 &4106704313442216117 stripped

@@ -11,7 +11,7 @@ namespace DialogueSystem
         private DialogueManager dialogueManager;
 
         private InputController inputController;
-
+    
         public bool onlyOnce;
         public bool lockPlayer;
 
@@ -20,6 +20,7 @@ namespace DialogueSystem
         public TriggerArea triggerArea;
 
         public Feedback endConversation;
+        public Transform activateOnEnd;
 
         public DialogueManager CurrentManager { get; set; }
 
@@ -30,7 +31,6 @@ namespace DialogueSystem
                 triggerArea.OnEnterArea += OnEnterDialogueArea;
                 triggerArea.OnExitArea += ExitDialogueArea;
             }
-
         }
 
         private void OnDisable()
@@ -40,7 +40,6 @@ namespace DialogueSystem
                 triggerArea.OnEnterArea -= OnEnterDialogueArea;
                 triggerArea.OnExitArea -= ExitDialogueArea;
             }
-
             if (CurrentManager)
             {
                 this.GetLevelManagerSubsystem<DialogueManager>(this) .currentDialogue = null;
@@ -52,7 +51,6 @@ namespace DialogueSystem
             dialogueManager = this.GetLevelManagerSubsystem<DialogueManager>();
             inputController = this.GetLevelManagerSubsystem<InputController>();
         }
-
 
         private void OnEnterDialogueArea(GameObject obj)
         {
@@ -72,6 +70,7 @@ namespace DialogueSystem
             if (onlyOnce)
                 gameObject.SetActive(false);
             dialogueManager.currentDialogue = null;
+            activateOnEnd.gameObject.SetActive(true);
             endConversation?.Invoke(this);
         }
 

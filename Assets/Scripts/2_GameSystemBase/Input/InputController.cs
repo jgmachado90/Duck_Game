@@ -24,5 +24,4 @@ public class InputController : Entity, ISubsystem<LevelManager>
         return Input.GetKeyDown(KeyCode.Z);
     }
 
-
 }
