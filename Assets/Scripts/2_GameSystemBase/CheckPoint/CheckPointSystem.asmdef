@@ -1,0 +1,17 @@
+{
+    "name": "CheckPointSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8db36904dad36354fb5eafbbf9c153b2",
+        "GUID:374d0f9afd8f22f4db31e4557b1b741b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

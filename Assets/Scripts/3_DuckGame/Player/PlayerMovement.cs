@@ -112,7 +112,9 @@ public class PlayerMovement : Entity
 
     private void CheckCollisions()
     {
+        Physics2D.queriesHitTriggers = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up *groundRaycastLength, groundRaycastLength, groundLayer);
+        Physics2D.queriesHitTriggers = true;
         onGround = hit;
     }
 

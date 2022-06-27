@@ -27,10 +27,10 @@ public class BounceComponent : MonoBehaviour
     }
     public void OnCollideWith(GameObject obj)
     {
-        Player player = obj.GetComponentInParent<Player>();
-        if(player != null)
+        IBouncable bouncable = obj.GetComponentInParent<IBouncable>();
+        if(bouncable != null)
         {
-            player.ApplyBounce(bounceForce);
+            bouncable.Bounce(bounceForce);
             if (damageWhenBounce)
                 ApplyDamage();
         }

@@ -36,7 +36,8 @@ namespace Health
             if (destroyOnDamage) damaged = true;
             
             OnDamagedEvent?.Invoke();
-            feedbackOnDamaged.PlayFeedbacks();
+            if(feedbackOnDamaged != null)
+                feedbackOnDamaged.PlayFeedbacks();
             
             if (destroyOnDamage){
                 Destroy(gameObject);

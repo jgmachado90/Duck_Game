@@ -66,12 +66,13 @@ namespace Health
         }
         
         [Button(ButtonMode.EnabledInPlayMode)]
-        public void AddHealth(){
-            health.AddHealth(1);
+        public void AddHealth(int value){
+            health.AddHealth(value);
         }
 
         private void PostDeath(){
-            feedbackDeath.PlayFeedbacks();
+            if(feedbackDeath != null)
+                feedbackDeath.PlayFeedbacks();
             OnDeath?.Invoke();
         }
 
