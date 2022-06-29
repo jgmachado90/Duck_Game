@@ -7,6 +7,7 @@ public class GameOverManager : Entity, ISubsystem<GameMode>
 {
     public GameMode OwnerManager { get; set; }
 
+    public float timeToRespawn;
     private CheckPointManager checkPointManager;
     private RespawnablesManager respawnablesManager;
 
@@ -18,6 +19,12 @@ public class GameOverManager : Entity, ISubsystem<GameMode>
 
     public void GameOver()
     {
+        StartCoroutine(GameOverCoroutine());
+    }
+
+    public IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(timeToRespawn);
         checkPointManager.ResetPlayer();
         respawnablesManager.RespawnEntities();
     }

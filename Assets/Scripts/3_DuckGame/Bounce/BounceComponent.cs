@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Health;
 using CollisionSystem;
+using MoreMountains.Feedbacks;
 
 public class BounceComponent : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BounceComponent : MonoBehaviour
     public float bounceForce;
     public HealthComponent health;
     public TriggerEnter2D triggerEnter2D;
+    public MMFeedbacks bounceFeedback;
 
     private void OnEnable()
     {
@@ -30,6 +32,8 @@ public class BounceComponent : MonoBehaviour
         IBouncable bouncable = obj.GetComponentInParent<IBouncable>();
         if(bouncable != null)
         {
+            if(bounceFeedback != null)
+                bounceFeedback.PlayFeedbacks();
             bouncable.Bounce(bounceForce);
             if (damageWhenBounce)
                 ApplyDamage();

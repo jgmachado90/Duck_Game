@@ -19,6 +19,7 @@ namespace CheckPointSystem
         public void ResetPlayer()
         {
             OwnerManager.PlayerCharacter.position = currentCheckPoint.spawnPosition.position;
+            OwnerManager.PlayerCharacter.gameObject.SetActive(true);
         }
 
     }
