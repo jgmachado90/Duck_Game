@@ -34,17 +34,16 @@ public class Water : MonoBehaviour {
 
     //The properties of our water
     float baseheight;
-    float left;
     float bottom;
 
     public Transform p1;
     public Transform p2;
 
+    public float splashValue;
+
     void Start()
     {
         SpawnWater(p1.position.x, p2.position.x - p1.position.x, p1.position.y, p2.position.y);
-        //Spawning our water
-        //SpawnWater(-10,20,0,-3);
     }
 
     public void Float(float xpos, Transform floatTrans)
@@ -127,7 +126,6 @@ public class Water : MonoBehaviour {
         //Set our variables
         baseheight = Top;
         bottom = Bottom;
-        left = Left;
 
         //For each node, set the line renderer and our physics arrays
         for (int i = 0; i < nodecount; i++)
@@ -215,6 +213,7 @@ public class Water : MonoBehaviour {
         //Here we use the Euler method to handle all the physics of our springs:
         for (int i = 0; i < xpositions.Length ; i++)
         {
+            Splash(i, Random.Range(-splashValue, splashValue));
             float force = springconstant * (ypositions[i] - baseheight) + velocities[i]*damping ;
             accelerations[i] = -force;
             ypositions[i] += velocities[i];

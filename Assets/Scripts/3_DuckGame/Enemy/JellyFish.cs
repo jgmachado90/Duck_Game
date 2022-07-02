@@ -8,20 +8,7 @@ public class JellyFish : Enemy, IRespawnable
     [SerializeField] private int health;
     [SerializeField] Transform content;
     [SerializeField] HealthComponent healthComponent;
-    [SerializeField] Rigidbody2D rb;
     private Vector3 initPos;
-
-    public Water water;
-    public bool floating;
-    private void Update()
-    {
-        if (floating)
-        {
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            water.Float(transform.position.x, content);         
-        }
-    }
 
     private void OnEnable()
     {

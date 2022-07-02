@@ -7,10 +7,15 @@ public class WaterDetector : MonoBehaviour {
     {
         if (Hit.GetComponent<Rigidbody2D>() != null)
         {
-          transform.parent.GetComponent<Water>().Splash(transform.position.x, Hit.GetComponent<Rigidbody2D>().velocity.y*Hit.GetComponent<Rigidbody2D>().mass / 40f);
-            JellyFish jelly = Hit.GetComponentInParent<JellyFish>();
-            if (jelly != null)
-                jelly.floating = true;
+            Water water = GetComponentInParent<Water>();
+            Rigidbody2D hitRb = Hit.GetComponent<Rigidbody2D>();
+            FloatComponent floatable = Hit.GetComponentInParent<FloatComponent>();
+
+            water.Splash(transform.position.x, hitRb.velocity.y* hitRb.mass / 40f);
+            
+            if (floatable == null) return;
+            floatable.floating = true;
+            floatable.myWater = water;
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7489411441149347765}
   - component: {fileID: 1463438736624213346}
   - component: {fileID: 1591885616}
+  - component: {fileID: 1138794682}
   m_Layer: 7
   m_Name: HealthComponent
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 1591885616}
+  - {fileID: 1138794682}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -179,6 +181,50 @@ MonoBehaviour:
   NestParticles: 0
   ApplyRotation: 0
   ApplyScale: 0
+--- !u!114 &1138794682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881820388892266440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129222f02399ae42b78955d953ada11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Set Active
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    ExcludeFromHoldingPauses: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  TargetGameObject: {fileID: 7165147487713990608}
+  SetStateOnInit: 0
+  StateOnInit: 1
+  SetStateOnPlay: 1
+  StateOnPlay: 1
+  SetStateOnStop: 0
+  StateOnStop: 1
+  SetStateOnReset: 0
+  StateOnReset: 1
 --- !u!1 &881820389486797822
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +369,7 @@ GameObject:
   - component: {fileID: 7409298563325629894}
   - component: {fileID: 2915284768552564711}
   - component: {fileID: 9037633626761976216}
+  - component: {fileID: 1873068206}
   m_Layer: 7
   m_Name: Content
   m_TagString: Untagged
@@ -391,6 +438,32 @@ MonoBehaviour:
   jumpForce: 12
   airLinearDrag: 0.01
   groundRaycastLength: 0.42
+--- !u!61 &1873068206
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165147487713990608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &9095670378256038153
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +504,10 @@ PrefabInstance:
     - target: {fileID: 1932822613942352784, guid: 2b13c67de295563459c094f989a2b612, type: 3}
       propertyPath: m_Name
       value: P_MDL_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932822613942352814, guid: 2b13c67de295563459c094f989a2b612, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1932822613942352815, guid: 2b13c67de295563459c094f989a2b612, type: 3}
       propertyPath: m_RootOrder
