@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8431943435188442008}
   - component: {fileID: 2855671848413811761}
+  - component: {fileID: 513720853}
   m_Layer: 0
   m_Name: Content
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5063369531009450565}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -127,6 +128,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &513720853
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063369531009450565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.04782951}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3782158, y: 0.13906741}
+  m_EdgeRadius: 0
 --- !u!1 &5811244847736388921
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +282,9 @@ MonoBehaviour:
   health: 1
   content: {fileID: 8431943435188442008}
   healthComponent: {fileID: 1829556673748075198}
+  rb: {fileID: 2855671848413811761}
+  water: {fileID: 0}
+  floating: 0
 --- !u!114 &18853389
 MonoBehaviour:
   m_ObjectHideFlags: 0
