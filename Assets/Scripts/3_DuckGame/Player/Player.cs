@@ -11,6 +11,7 @@ public class Player : Entity, IBouncable
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private HealthComponent healthComponent;
+    public Transform content;
     private GameOverManager gameOverManager;
 
     private void OnEnable()

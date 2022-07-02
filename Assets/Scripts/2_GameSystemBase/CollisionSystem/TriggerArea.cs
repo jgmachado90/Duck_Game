@@ -93,15 +93,22 @@ namespace CollisionSystem {
         private void Enter() {
             OnEnterArea?.Invoke(LastTriggeredObject);
             if (gameObject.activeSelf)
-                feedbackEnter.PlayFeedbacks();
+            {
+
+                if(feedbackEnter != null)
+                    feedbackEnter.PlayFeedbacks();
+            }
         }
         
         [Button(ButtonMode.EnabledInPlayMode)]
         private void Exit() {
             OnExitArea?.Invoke(LastTriggeredObject);
             LastTriggeredObject = null;
-            if(gameObject.activeSelf)
-                feedbackExit.PlayFeedbacks();
+            if (gameObject.activeSelf)
+            {
+                if (feedbackExit != null)
+                    feedbackExit.PlayFeedbacks();
+            }
         }
     }
 }

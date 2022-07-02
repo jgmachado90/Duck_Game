@@ -1,0 +1,19 @@
+{
+    "name": "PathFollower",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9bee329781003f64eb2aa5d6b754655f",
+        "GUID:8db36904dad36354fb5eafbbf9c153b2",
+        "GUID:374d0f9afd8f22f4db31e4557b1b741b",
+        "GUID:dad624460036b51448e1b1849358a96a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

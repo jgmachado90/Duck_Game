@@ -224,9 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd49f45e4a37d4c4b8566abc3375c52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   playerMovement: {fileID: 9037633626761976216}
   rb: {fileID: 2915284768552564711}
   healthComponent: {fileID: 4778407343302601659}
+  content: {fileID: 7409298563325629894}
 --- !u!1 &5451329596033151378
 GameObject:
   m_ObjectHideFlags: 0
