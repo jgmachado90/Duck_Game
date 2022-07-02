@@ -4,6 +4,7 @@ Shader "Unlit/WaterShader"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _WaterColor ("Color", color) = (1,1,1,1)
+        _WaterColor2 ("Color2", color) = (1,1,1,1)
     }
     SubShader
     {
@@ -38,6 +39,8 @@ Shader "Unlit/WaterShader"
             float4 _MainTex_ST;
 
             float4 _WaterColor;
+            
+            float4 _WaterColor2;
 
             v2f vert (appdata v)
             {
@@ -51,7 +54,8 @@ Shader "Unlit/WaterShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = _WaterColor;
+                float4 waterColor = lerp(_WaterColor, _WaterColor2, i.uv.y);
+                fixed4 col = i.uv.y < 0.99 ? waterColor : float4(1,1,1,0.5);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
