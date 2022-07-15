@@ -6,6 +6,7 @@ public class CameraSnapFollow : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 mask = Vector3.one;
     [SerializeField] private int gridSize;
+    [SerializeField] private Transform cameraFollow;
 
     private bool _initialized;
     private Vector3 _iniPos;

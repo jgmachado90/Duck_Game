@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WaterDetector : MonoBehaviour {
 
+    public bool splashing;
+
     void OnTriggerEnter2D(Collider2D Hit)
     {
         if (Hit.GetComponent<Rigidbody2D>() != null)
@@ -11,7 +13,13 @@ public class WaterDetector : MonoBehaviour {
             Rigidbody2D hitRb = Hit.GetComponent<Rigidbody2D>();
             FloatComponent floatable = Hit.GetComponentInParent<FloatComponent>();
 
-            water.Splash(transform.position.x, hitRb.velocity.y* hitRb.mass / 40f);
+            water.Splash(transform.position.x, hitRb.velocity.y * hitRb.mass / 40f);
+
+            if (hitRb.velocity.y < -0.5f || hitRb.velocity.y > 0.5f)
+            {
+                StartCoroutine(SplashingTime(water, hitRb));
+            }
+
             
             if (floatable == null) return;
             floatable.floating = true;
@@ -19,17 +27,22 @@ public class WaterDetector : MonoBehaviour {
         }
     }
 
-    /*void OnTriggerStay2D(Collider2D Hit)
+    public IEnumerator SplashingTime(Water water, Rigidbody2D rb)
     {
-        //print(Hit.name);
-        if (Hit.rigidbody2D != null)
+        if (!splashing)
         {
-            int points = Mathf.RoundToInt(Hit.transform.localScale.x * 15f);
-            for (int i = 0; i < points; i++)
+            splashing = true;
+            BoxCollider2D myCollider = GetComponent<BoxCollider2D>();
+            //Vector3 splashPos = new Vector3(transform.position.x, transform.position.y + (myCollider.bounds.size.y * 0.5f), transform.position.z);
+            if (rb.transform.position.y > transform.position.y + (myCollider.bounds.size.y * 0.5f))
             {
-                transform.parent.GetComponent<Water>().Splish(Hit.transform.position.x - Hit.transform.localScale.x + i * 2 * Hit.transform.localScale.x / points, Hit.rigidbody2D.mass * Hit.rigidbody2D.velocity.x / 10f / points * 2f);
+
+                Vector3 splashPos = new Vector3(transform.position.x, water.GetYPos(transform.position.x) + rb.velocity.y * 0.01f, transform.position.z);
+                water.InstantiateSplash(splashPos);
             }
+            yield return new WaitForSeconds(1f);
+            splashing = false;
         }
-    }*/
+    }
 
 }

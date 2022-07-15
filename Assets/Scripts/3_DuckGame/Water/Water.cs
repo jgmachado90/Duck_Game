@@ -57,6 +57,13 @@ public class Water : MonoBehaviour {
         }
     }
 
+    public float GetYPos(float xpos)
+    {
+        xpos -= xpositions[0];
+        int index = Mathf.RoundToInt((xpositions.Length - 1) * (xpos / (xpositions[xpositions.Length - 1] - xpositions[0])));
+        return ypositions[index];
+    }
+
     
     public void Splash(float xpos, float velocity)
     {
@@ -85,11 +92,27 @@ public class Water : MonoBehaviour {
 
             //This line aims the splash towards the middle. Only use for small bodies of water:
             Quaternion rotation = Quaternion.LookRotation(new Vector3(xpositions[Mathf.FloorToInt(xpositions.Length / 2)], baseheight + 8, 5) - position);
-            
+
             //Create the splash and tell it to destroy itself.
             //GameObject splish = Instantiate(splash,position,rotation) as GameObject;
             //Destroy(splish, lifetime+0.3f);
+            /*GameObject splashGO = Instantiate(splash, position, Quaternion.identity);
+            StartCoroutine(DelayedDestroyParticles(splashGO));*/
+        
         }
+    }
+
+    public void InstantiateSplash(Vector3 pos)
+    {
+        StartCoroutine(DelayedDestroyParticles(pos));
+    }
+
+    public IEnumerator DelayedDestroyParticles(Vector3 pos)
+    {
+        //yield return new WaitForSeconds(0.1f);
+        GameObject splashGO = Instantiate(splash, pos, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        Destroy(splashGO);
     }
 
     public void SpawnWater(float Left, float Width, float Top, float Bottom)
