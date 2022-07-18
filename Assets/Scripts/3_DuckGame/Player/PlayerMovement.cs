@@ -30,6 +30,7 @@ public class PlayerMovement : Entity
     [Header("JumpVariables")]
     [SerializeField] private float jumpForce = 12f;
     [SerializeField] private float airLinearDrag = 2.5f;
+    [SerializeField] private float fallGravityScale;
 
     [Header("Ground Collision Variables")]
     [SerializeField] private float groundRaycastLength;
@@ -102,6 +103,7 @@ public class PlayerMovement : Entity
     private void ApplyAirLinearDrag()
     {
         rb.drag = airLinearDrag;
+        rb.gravityScale = fallGravityScale;
     }
 
     public void Jump(float force = -1)

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageWhenBounce: 0
-  bounceForce: 9
+  bounceForce: 13
   health: {fileID: 0}
   triggerEnter2D: {fileID: 3758529922511973726}
   bounceFeedback: {fileID: 4412383662834040870}
