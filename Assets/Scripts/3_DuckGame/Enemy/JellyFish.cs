@@ -9,6 +9,7 @@ public class JellyFish : Enemy, IRespawnable
     [SerializeField] Transform content;
     [SerializeField] HealthComponent healthComponent;
     private Vector3 initPos;
+   
 
     private void OnEnable()
     {
