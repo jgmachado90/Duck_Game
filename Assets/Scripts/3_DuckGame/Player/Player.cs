@@ -11,6 +11,18 @@ public class Player : Entity, IBouncable
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private HealthComponent healthComponent;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    public SpriteRenderer MySpriteRenderer
+    {
+        get { return spriteRenderer; }
+    }
+
+
+    public PlayerMovement PlayerMovement
+    {
+        get { return playerMovement; }
+    }
+
     public Transform content;
     private GameOverManager gameOverManager;
 

@@ -11,6 +11,11 @@ public class PlayerMovement : Entity
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private InputController inputController;
 
+    public InputController InputController
+    {
+        get { return inputController; }
+    }
+
     [Header("Layer Masks")]
     [SerializeField] private LayerMask groundLayer = new LayerMask();
 

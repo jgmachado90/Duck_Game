@@ -43,7 +43,7 @@ public class CameraSnapFollow : MonoBehaviour
             offset.y = Mathf.Round(offset.y / gridSize) * gridSize * mask.y;
         if (gridSize > 0)
             offset.z = Mathf.Round(offset.z / gridSize) * gridSize * mask.z;
-        transform.position = _iniPos + offset;
+        cameraFollow.position = _iniPos + offset;
     }
 }
 

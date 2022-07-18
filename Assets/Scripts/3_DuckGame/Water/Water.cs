@@ -52,7 +52,7 @@ public class Water : MonoBehaviour {
         {
             xpos -= xpositions[0];
             int index = Mathf.RoundToInt((xpositions.Length - 1) * (xpos / (xpositions[xpositions.Length - 1] - xpositions[0])));
-            Vector3 position = new Vector3(xpositions[index], ypositions[index] /*- 0.35f*/, 5);
+            Vector3 position = new Vector3(xpositions[index], ypositions[index] /*- 0.35f*/, 0);
             floatTrans.position = position;
         }
     }
